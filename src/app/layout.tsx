@@ -23,7 +23,7 @@ export default function RootLayout({
       <head>
         <link rel='icon' href='/favicon.svg' />
       </head>
-      <body className={`${fira.className} bg-primary-base min-h-screen`}>
+      <body className={`${fira.className} min-h-screen `}>
         <Header />
         {children}
       </body>

@@ -10,6 +10,7 @@ const config: Config = {
     extend: {
       colors: {
         'primary-base': 'var(--primary-base)',
+        'primary-base-10': 'var(--primary-base-10)',
       },
     },
   },

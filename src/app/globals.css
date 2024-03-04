@@ -4,6 +4,7 @@
 
 :root {
   --primary-base: hsl(239, 34%, 27%);
+  --primary-base-10: hsl(239, 25%, 34%);
   --white: #ffffff;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
