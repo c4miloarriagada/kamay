@@ -25,7 +25,7 @@ export default function RootLayout({
       </head>
       <body className={`${fira.className} min-h-screen `}>
         <Header />
-        {children}
+        <main className='min-h-screen w-screen  px-40'>{children}</main>
       </body>
     </html>
   );
