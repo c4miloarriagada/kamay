@@ -10,7 +10,7 @@ export const Header = () => {
         <span>
           <Logo height={42} width={42} />
         </span>
-        <h1 className='md:animate-fadeIn max-md:animate-fadeOut flex h-full items-center whitespace-nowrap text-4xl font-semibold tracking-wider text-neutral-800 '>
+        <h1 className='flex h-full items-center whitespace-nowrap text-4xl  font-semibold tracking-wider text-primary-base max-md:animate-fadeOut md:animate-fadeIn '>
           Kamay Labs
         </h1>
       </div>
