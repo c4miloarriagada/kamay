@@ -11,7 +11,7 @@ export const HeroImg = () => {
         to create delightful apps for their customers and employees.
       </p>
       <span>
-        <Button label='Get started' />
+        <Button disabled label='Get started' />
       </span>
     </div>
   );
