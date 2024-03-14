@@ -1,5 +1,3 @@
-import { FaChartLine, FaMobileScreen } from 'react-icons/fa6';
-import { HiOutlineComputerDesktop } from 'react-icons/hi2';
 import { TfiWorld } from 'react-icons/tfi';
 import { Card } from './_components/Card';
 import { HeroImg } from './_components/HeroImg';
@@ -8,6 +6,7 @@ import {
   MdOutlinePhoneAndroid,
   MdOutlineShowChart,
 } from 'react-icons/md';
+import { GetStarted } from './_components/GetStarted';
 
 const data = [
   {
@@ -43,6 +42,9 @@ export default function Home() {
             <Card key={props.title} {...props} />
           ))}
         </section>
+        <div>
+          <GetStarted />
+        </div>
       </div>
     </section>
   );

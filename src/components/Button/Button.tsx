@@ -1,5 +1,5 @@
 interface Props {
-  onClick: () => void;
+  onClick?: () => void;
   label: string;
   disabled: boolean;
 }
@@ -11,7 +11,7 @@ export const Button = ({ onClick, label, disabled }: Props) => {
       aria-disabled={disabled}
       disabled={disabled}
       aria-label={label}
-      onClick={onClick}
+      // onClick={onClick}
     >
       {label}
     </button>
