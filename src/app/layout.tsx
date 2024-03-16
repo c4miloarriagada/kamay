@@ -6,6 +6,8 @@ import './globals.css';
 const fira = Fira_Sans({
   weight: ['400', '500', '600', '700'],
   subsets: ['latin'],
+  display: 'swap',
+  adjustFontFallback: false,
 });
 
 export const metadata: Metadata = {
