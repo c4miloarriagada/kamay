@@ -1,13 +1,11 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   output: 'export',
-
   reactStrictMode: true,
   webpack(config) {
     const fileLoaderRule = config.module.rules.find((rule) =>
       rule.test?.test?.('.svg')
     );
-
     config.module.rules.push(
       {
         ...fileLoaderRule,
@@ -21,11 +19,10 @@ const nextConfig = {
         use: ['@svgr/webpack'],
       }
     );
-
     fileLoaderRule.exclude = /\.svg$/i;
-
     return config;
   },
+  assetPrefix: './',
 };
 
 export default nextConfig;
