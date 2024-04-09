@@ -34,7 +34,7 @@ const data = [
 export default function Home() {
   return (
     <section className='min-h-screen w-full  p-4'>
-      <div className='flex h-[60rem] w-full flex-col gap-6'>
+      <div className='flex h-[60rem] w-full flex-col gap-8'>
         <HeroImg />
         <h2 className='text-4xl font-bold tracking-wider'>Our Services</h2>
         <section className='flex h-[40rem] w-full gap-4 max-md:flex-col'>
@@ -42,9 +42,9 @@ export default function Home() {
             <Card key={props.title} {...props} />
           ))}
         </section>
-        <div>
+        <section className='mt-8 min-h-64'>
           <GetStarted />
-        </div>
+        </section>
       </div>
     </section>
   );
