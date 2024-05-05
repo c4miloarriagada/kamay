@@ -19,9 +19,7 @@ export default function RootLayout({
       </head>
       <body className={` min-h-screen `}>
         <Header />
-        <main className='h-full  px-40 pt-9 max-lg:px-20 max-md:px-14 max-sm:px-2'>
-          {children}
-        </main>
+        <main className='h-full pt-9 '>{children}</main>
       </body>
     </html>
   );
