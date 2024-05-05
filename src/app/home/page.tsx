@@ -1,10 +1,3 @@
-import { TfiWorld } from 'react-icons/tfi';
-import {
-  MdComputer,
-  MdOutlinePhoneAndroid,
-  MdOutlineShowChart,
-} from 'react-icons/md';
-import { FaCode } from 'react-icons/fa';
 import { CiSettings } from 'react-icons/ci';
 import { GoCloud } from 'react-icons/go';
 import { IoCodeOutline } from 'react-icons/io5';
