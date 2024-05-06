@@ -12,6 +12,7 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
   )
 
   useEffect(() => {
+    if (typeof window === 'undefined') return
     const storedValue = JSON.parse(localStorage.getItem(key) ?? '')
     setValue(storedValue as T)
 
