@@ -1,10 +1,10 @@
-'use client';
-import { type SubmitHandler, useForm } from 'react-hook-form';
-import { Input } from '@/components/ui/input';
-import { Textarea } from '@/components/ui/textarea';
-import { Button } from '@/components/ui/button';
-import { z } from 'zod';
-import { zodResolver } from '@hookform/resolvers/zod';
+'use client'
+import { type SubmitHandler, useForm } from 'react-hook-form'
+import { Input } from '@/components/ui/input'
+import { Textarea } from '@/components/ui/textarea'
+import { Button } from '@/components/ui/button'
+import { z } from 'zod'
+import { zodResolver } from '@hookform/resolvers/zod'
 
 const ContactSchema = z.object({
   name: z.string().min(3, { message: 'Name must be valid' }),
@@ -12,20 +12,20 @@ const ContactSchema = z.object({
   message: z
     .string()
     .min(10)
-    .max(400, { message: 'Max length message is 400 characters' }),
-});
+    .max(400, { message: 'Max length message is 400 characters' })
+})
 
-type ContactForm = z.infer<typeof ContactSchema>;
+type ContactForm = z.infer<typeof ContactSchema>
 
 export const ContactForm = () => {
   const {
     register,
     handleSubmit,
     watch,
-    formState: { errors },
-  } = useForm<ContactForm>({ resolver: zodResolver(ContactSchema) });
+    formState: { errors }
+  } = useForm<ContactForm>({ resolver: zodResolver(ContactSchema) })
 
-  const onSubmit: SubmitHandler<any> = (data) => console.log(data);
+  const onSubmit: SubmitHandler<any> = (data) => console.log(data)
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2'>
@@ -59,7 +59,9 @@ export const ContactForm = () => {
         {' '}
         {errors['message'] && errors['message'].message}
       </p>
-      <Button className='bg-green-900  hover:bg-green-700'>Submit</Button>
+      <Button className='bg-green-900 hover:bg-green-700  dark:text-white'>
+        Submit
+      </Button>
     </form>
-  );
-};
+  )
+}

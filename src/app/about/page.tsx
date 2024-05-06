@@ -4,11 +4,11 @@ export default function AboutPage() {
       <section className='w-full py-12 md:py-24 lg:py-32'>
         <div className='container px-4 md:px-6'>
           <div className='flex flex-col items-center space-y-4 text-center'>
-            <div className='space-y-2'>
+            <div className='h-60 space-y-2'>
               <h1 className='text-3xl font-bold tracking-wider sm:text-5xl xl:text-6xl/none'>
                 About Kamay Labs
               </h1>
-              <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
+              <p className='mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl'>
                 Learn more about our company and our mission to transform
                 businesses through innovative software solutions.
               </p>
@@ -40,5 +40,5 @@ export default function AboutPage() {
         </div>
       </section>
     </div>
-  );
+  )
 }

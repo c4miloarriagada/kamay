@@ -1,23 +1,23 @@
-import { CiSettings } from 'react-icons/ci';
-import { GoCloud } from 'react-icons/go';
-import { IoCodeOutline } from 'react-icons/io5';
-import { ContactForm } from './_components/ContactForm';
+import { CiSettings } from 'react-icons/ci'
+import { GoCloud } from 'react-icons/go'
+import { IoCodeOutline } from 'react-icons/io5'
+import { ContactForm } from './_components/ContactForm'
 
 export default function Home() {
   return (
     <section className='min-h-screen w-full  '>
-      <div className='flex min-h-[60rem] w-full flex-col gap-8'>
+      <div className='flex min-h-[50rem] w-full flex-col gap-8'>
         <div className='flex h-[30rem] flex-col items-center justify-center space-y-4 text-center'>
           <div className='space-y-2'>
             <h1 className='text-3xl font-bold  tracking-wider sm:text-5xl xl:text-6xl/none'>
               Kamay Labs Software Creations
             </h1>
-            <p className='mx-auto max-w-[700px] text-gray-500 md:text-xl dark:text-gray-400'>
+            <p className='mx-auto max-w-[700px] text-gray-500 dark:text-gray-400 md:text-xl'>
               Crafting innovative software solutions to transform your business.
             </p>
           </div>
         </div>
-        <section className='flex w-full justify-center  bg-gray-100 py-12 md:py-24 lg:py-32 '>
+        <section className='flex w-full justify-center  bg-gray-100 py-12 dark:bg-gray-700 md:py-24 lg:py-32 '>
           <div className='container px-4 md:px-6'>
             <div className='grid gap-6 lg:grid-cols-3'>
               <div className='flex flex-col items-center justify-center space-y-4 text-center'>
@@ -64,7 +64,7 @@ export default function Home() {
               <h2 className='text-3xl font-bold tracking-tighter md:text-4xl/tight'>
                 Get in Touch
               </h2>
-              <p className='mx-auto max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400'>
+              <p className='mx-auto max-w-[600px] text-gray-500 dark:text-gray-400 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed'>
                 Have a project in mind? Let&apos;s discuss how we can bring your
                 ideas to life.
               </p>
@@ -76,5 +76,5 @@ export default function Home() {
         </section>
       </div>
     </section>
-  );
+  )
 }
