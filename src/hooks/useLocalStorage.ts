@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from 'react'
 
 export const useLocalStorage = <T>(key: string, initialValue: T) => {
   const [value, setValue] = useState(initialValue)
+
   const setLocalStorage = useCallback(
     (value: T) => {
       setValue(value)
@@ -11,16 +12,25 @@ export const useLocalStorage = <T>(key: string, initialValue: T) => {
     [key]
   )
 
-  useEffect(() => {
-    if (typeof window === 'undefined') return
-    const storedValue = JSON.parse(localStorage.getItem(key) ?? '')
-    setValue(storedValue as T)
-
-    if (!storedValue) {
-      setLocalStorage(storedValue as T)
+  const readValue = useCallback(() => {
+    if (typeof window === 'undefined') {
+      return null
     }
-  }, [setLocalStorage, key])
 
+    try {
+      const storedValue = localStorage.getItem(key) ?? ''
+      const parsedValue = JSON.parse(storedValue)
+      return parsedValue
+    } catch (error) {
+      console.log(`Key: ${key} doesn't exist`)
+      return null
+    }
+  }, [key])
+
+  useEffect(() => {
+    setValue(readValue())
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [key])
   return {
     value,
     setLocalStorage
