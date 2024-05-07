@@ -16,10 +16,10 @@ export const DarkMode = () => {
 
   return (
     <button onClick={() => setLocalStorage(value ? false : true)}>
-      {value ? (
-        <IoMoonOutline color={value ? '#99A3AF' : ''} size={20} />
+      {!value ? (
+        <IoMoonOutline size={20} />
       ) : (
-        <IoSunnyOutline size={20} />
+        <IoSunnyOutline color={value ? '#99A3AF' : ''} size={20} />
       )}
     </button>
   )

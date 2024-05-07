@@ -12,21 +12,21 @@ export const Header = () => {
       </div>
       <div className=' flex h-full w-full items-end justify-center py-3'>
         <span className='flex h-full w-full items-center justify-end gap-9 font-medium text-neutral-800  max-md:gap-3'>
-          <Link
+          {/* <Link
             className=' whitespace-nowrap dark:text-gray-400'
             href='/services'
           >
             Services
-          </Link>
+          </Link> */}
           <Link className='whitespace-nowrap dark:text-gray-400' href='/about'>
             About Us
           </Link>
-          <Link
+          {/* <Link
             className='whitespace-nowrap dark:text-gray-400'
             href='/contact'
           >
             Contact
-          </Link>
+          </Link> */}
           <DarkMode />
         </span>
       </div>
