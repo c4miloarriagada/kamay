@@ -22,6 +22,7 @@ const ContactSchema = z.object({
 export type ContactForm = z.infer<typeof ContactSchema>
 
 export const ContactForm = () => {
+  const { toast } = useToast()
   const { boolean: loading, setIsLoading } = useBoolean()
   const {
     register,

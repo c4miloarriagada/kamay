@@ -1,13 +1,13 @@
 'use client'
 
-import { useState } from 'react'
+import { useCallback, useState } from 'react'
 
 export const useBoolean = () => {
   const [boolean, setBoolean] = useState(false)
 
-  const setIsLoading = () => {
+  const setIsLoading = useCallback(() => {
     setBoolean((prevState) => !prevState)
-  }
+  }, [])
 
   return {
     boolean,

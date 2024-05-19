@@ -1,6 +1,7 @@
 import { Header } from '@/components/Header/Header'
 import type { Metadata } from 'next'
 import './globals.css'
+import { Toaster } from '@/components/ui/toaster'
 
 export const metadata: Metadata = {
   title: 'Kamay Labs Limitada',
@@ -21,6 +22,7 @@ export default function RootLayout({
       <body className={` min-h-screen `}>
         <Header />
         <main className='h-full pt-9 '>{children}</main>
+        <Toaster />
       </body>
     </html>
   )
