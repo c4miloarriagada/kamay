@@ -3,7 +3,6 @@ import { type SubmitHandler, useForm } from 'react-hook-form'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
-import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { createForm, sendContactEmail } from '../_actions/actions'
 import { z } from 'zod'
@@ -20,13 +19,13 @@ const ContactSchema = z.object({
     .max(400, { message: 'Max length message is 400 characters' })
 })
 
-type ContactForm = z.infer<typeof ContactSchema>
+export type ContactForm = z.infer<typeof ContactSchema>
 
 export const ContactForm = () => {
   const {
     register,
     handleSubmit,
-    watch,
+    reset,
     formState: { errors }
   } = useForm<ContactForm>({ resolver: zodResolver(ContactSchema) })
 
@@ -85,7 +84,10 @@ export const ContactForm = () => {
         {' '}
         {errors['message'] && errors['message'].message}
       </p>
-      <Button className='bg-green-900 hover:bg-green-700  dark:text-white'>
+      <Button
+        type='submit'
+        className='bg-green-900 hover:bg-green-700  dark:text-white'
+      >
         Submit
       </Button>
     </form>

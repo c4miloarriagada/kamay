@@ -3,7 +3,7 @@ import { GoCloud } from 'react-icons/go'
 import { IoCodeOutline } from 'react-icons/io5'
 import { ContactForm } from './_components/ContactForm'
 
-export default function Home() {
+export default async function Home() {
   return (
     <section className='min-h-screen w-full  '>
       <div className='flex min-h-[50rem] w-full flex-col gap-8'>
