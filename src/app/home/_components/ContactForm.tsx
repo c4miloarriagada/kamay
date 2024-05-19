@@ -22,6 +22,7 @@ const ContactSchema = z.object({
 export type ContactForm = z.infer<typeof ContactSchema>
 
 export const ContactForm = () => {
+  const { boolean: loading, setIsLoading } = useBoolean()
   const {
     register,
     handleSubmit,
@@ -53,43 +54,52 @@ export const ContactForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2'>
-      <Input
-        {...register('name')}
-        className='max-w-lg flex-1'
-        placeholder='Name'
-        type='text'
-        autoComplete='off'
-      />
-      <p className='my-1 block h-4 text-red-700'>
-        {errors['name'] && errors['name'].message}
-      </p>
-      <Input
-        {...register('email')}
-        className='max-w-lg flex-1'
-        placeholder='Email'
-        type='email'
-        autoComplete='off'
-      />
-      <p className='my-1 block h-4 text-red-700'>
-        {' '}
-        {errors['email'] && errors['email'].message}
-      </p>
-      <Textarea
-        {...register('message')}
-        className='max-w-lg flex-1'
-        placeholder='Message'
-      />
-      <p className='my-1 block h-4 text-red-700'>
-        {' '}
-        {errors['message'] && errors['message'].message}
-      </p>
-      <Button
-        type='submit'
-        className='bg-green-900 hover:bg-green-700  dark:text-white'
-      >
-        Submit
-      </Button>
-    </form>
+    <>
+      {loading ? (
+        <SkeletonForm />
+      ) : (
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className='flex flex-col space-y-2'
+        >
+          <Input
+            {...register('name')}
+            className='max-w-lg flex-1'
+            placeholder='Name'
+            type='text'
+            autoComplete='off'
+          />
+          <p className='my-1 block h-4 text-red-700'>
+            {errors['name'] && errors['name'].message}
+          </p>
+          <Input
+            {...register('email')}
+            className='max-w-lg flex-1'
+            placeholder='Email'
+            type='email'
+            autoComplete='off'
+          />
+          <p className='my-1 block h-4 text-red-700'>
+            {' '}
+            {errors['email'] && errors['email'].message}
+          </p>
+          <Textarea
+            {...register('message')}
+            className='max-w-lg flex-1'
+            placeholder='Message'
+          />
+          <p className='my-1 block h-4 text-red-700'>
+            {' '}
+            {errors['message'] && errors['message'].message}
+          </p>
+          <Button
+            type='submit'
+            className='bg-green-900 hover:bg-green-700  dark:text-white'
+          >
+            Submit
+          </Button>
+        </form>
+      )}
+    </>
   )
 }
