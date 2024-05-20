@@ -7,6 +7,8 @@
 .yarn/install-state.gz
 /generated
 
+schema.prisma
+
 # testing
 /coverage
 
