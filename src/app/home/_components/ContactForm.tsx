@@ -5,6 +5,11 @@ import { Textarea } from '@/components/ui/textarea'
 import { Button } from '@/components/ui/button'
 import { z } from 'zod'
 import { zodResolver } from '@hookform/resolvers/zod'
+import { createForm, sendContactEmail } from '../_actions/actions'
+import { z } from 'zod'
+import { useBoolean } from '@/hooks/useBoolean'
+import { SkeletonForm } from './SkeletonForm'
+import { useToast } from '@/components/ui/use-toast'
 
 const ContactSchema = z.object({
   name: z.string().min(3, { message: 'Name must be valid' }),
@@ -25,7 +30,28 @@ export const ContactForm = () => {
     formState: { errors }
   } = useForm<ContactForm>({ resolver: zodResolver(ContactSchema) })
 
-  const onSubmit: SubmitHandler<any> = (data) => console.log(data)
+  const onSubmit: SubmitHandler<ContactForm> = async (data) => {
+    setIsLoading()
+    const res = await createForm(data)
+    if (res) {
+      await sendContactEmail({
+        email: res.email,
+        message: res.message,
+        name: res.name
+      })
+      toast({
+        title: 'Form was submitted successfully',
+        variant: 'default'
+      })
+    } else {
+      toast({
+        title: 'Connection error',
+        variant: 'destructive'
+      })
+    }
+    reset()
+    setIsLoading()
+  }
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className='flex flex-col space-y-2'>
